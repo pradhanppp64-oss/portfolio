@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pradhan P | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f4f7ff;
+      color: #1e293b;
+      scroll-behavior: smooth;
+    }
+
+    /* Container */
+    .container {
+      width: 82%;
+      max-width: 1050px;
+      margin: auto;
+      padding: 35px 0;
+    }
+
+    /* Header Card */
+    .header-card {
+      background: white;
+      padding: 40px;
+      text-align: center;
+      border-radius: 22px;
+      box-shadow: 0px 10px 25px rgba(0,0,0,0.10);
+      border-top: 4px solid transparent;
+      border-image: linear-gradient(to right, #3b82f6, #ec4899) 1;
+    }
+
+    .header-card h1 {
+      font-size: 34px;
+      font-weight: 600;
+    }
+
+    .header-card p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #475569;
+    }
+
+    /* Buttons */
+    .buttons {
+      margin-top: 22px;
+    }
+
+    .btn {
+      padding: 9px 20px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      margin: 6px;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, #2563eb, #3b82f6);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+      background: linear-gradient(to right, #1d4ed8, #2563eb);
+    }
+
+    .btn-outline {
+      background: white;
+      border: 1px solid #cbd5e1;
+    }
+
+    .btn-outline:hover {
+      background: #f1f5f9;
+      transform: scale(1.05);
+    }
+
+    /* Navigation */
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin: 22px 0;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      text-decoration: none;
+      font-size: 13px;
+      padding: 7px 16px;
+      border-radius: 20px;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      transition: 0.3s;
+    }
+
+    .nav a:hover {
+      background: linear-gradient(to right, #2563eb, #ec4899);
+      color: white;
+    }
+
+    /* Premium Glass Card Design */
+    .card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 28px;
+
+      box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.12);
+
+      border: 2px solid transparent;
+      background-clip: padding-box;
+      position: relative;
+
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s ease;
+    }
+
+    /* Gradient Border Glow */
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 2px;
+      background: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899);
+      background-size: 300% 300%;
+      animation: gradientMove 6s ease infinite;
+
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+
+    /* Card Reveal */
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hover Floating Effect */
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0px 14px 40px rgba(59, 130, 246, 0.25);
+    }
+
+    /* Section Titles */
+    .card h2 {
+      font-size: 21px;
+      margin-bottom: 15px;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .card h2::after {
+      content: "";
+      display: block;
+      width: 70px;
+      height: 4px;
+      margin-top: 7px;
+      border-radius: 4px;
+      background: linear-gradient(to right, #3b82f6, #ec4899);
+    }
+
+    .card ul {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    .card ul li {
+      font-size: 14px;
+      margin-bottom: 7px;
+      color: #334155;
+    }
+
+    /* Tags */
+    .tags span {
+      display: inline-block;
+      padding: 6px 13px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin: 6px 6px 0 0;
+      background: #f1f5ff;
+      border: 1px solid #dbeafe;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: gray;
+      margin-top: 30px;
+    }
+
+    /* Gradient Animation */
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="header-card">
+      <h1>Pradhan P</h1>
+      <p>
+        MCA Graduate with strong skills in Python, Java, Web Development, and Machine Learning.
+      </p>
+
+      <div class="buttons">
+        <button class="btn btn-primary" onclick="scrollToSection('projects')">View Projects</button>
+        <button class="btn btn-outline" onclick="scrollToSection('connect')">Contact</button>
+        <button class="btn btn-outline" onclick="scrollToSection('resume')">Resume</button>
+      </div>
+    </div>
+
+    <!-- NAV -->
+    <div class="nav">
+      <a href="#intro">Introduction</a>
+      <a href="#skills">Skills</a>
+      <a href="#internship">Internships</a>
+      <a href="#projects">Projects</a>
+      <a href="#connect">Connect</a>
+      <a href="#resume">Resume</a>
+    </div>
+
+    <!-- INTRO -->
+    <div class="card" id="intro">
+      <h2>Introduction</h2>
+      <p>
+        I am an MCA graduate passionate about software development and machine learning.
+        I enjoy building real-world predictive applications and working with modern tools.
+      </p>
+      <ul>
+        <li>Strong foundation in Python, Java, and C programming.</li>
+        <li>Interested in software development, ML applications, and data analytics.</li>
+        <li>Quick learner with teamwork and problem-solving mindset.</li>
+      </ul>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="card" id="skills">
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><b>Languages:</b> Python, Java, C</li>
+        <li><b>Web:</b> HTML, CSS, JavaScript</li>
+        <li><b>Database:</b> MySQL</li>
+        <li><b>Tools:</b> VS Code, Eclipse, Jupyter Notebook</li>
+        <li><b>Machine Learning:</b> Data Analysis, Model Training</li>
+      </ul>
+    </div>
+
+    <!-- INTERNSHIP -->
+    <div class="card" id="internship">
+      <h2>Internship Experience</h2>
+
+      <b>MEVI Technologies LLP – Python Machine Learning</b>
+      <ul>
+        <li>Worked on preprocessing and training ML models using real datasets.</li>
+        <li>Developed predictive projects with Python libraries.</li>
+      </ul>
+
+      <br>
+
+      <b>Nanochip Skills Pvt Ltd – AI, ML, Deep Learning</b>
+      <ul>
+        <li>Implemented deep learning techniques and neural networks.</li>
+        <li>Gained hands-on exposure through AI-driven projects.</li>
+      </ul>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="card" id="projects">
+      <h2>Projects</h2>
+
+      <b>Flight Price Prediction</b>
+      <p>Predicts flight ticket prices using historical data and ML algorithms.</p>
+      <ul>
+        <li>Feature engineering and preprocessing.</li>
+        <li>Model evaluation and optimization.</li>
+      </ul>
+      <div class="tags">
+        <span>Python</span><span>Pandas</span><span>Scikit-learn</span>
+      </div>
+
+      <br><br>
+
+      <b>Face Recognition System</b>
+      <p>Real-time recognition system matching live images with stored records.</p>
+      <ul>
+        <li>Facial landmark detection for accuracy improvement.</li>
+        <li>Database matching and authentication support.</li>
+      </ul>
+      <div class="tags">
+        <span>Python</span><span>OpenCV</span><span>ML</span>
+      </div>
+    </div>
+
+    <!-- CONNECT -->
+    <div class="card" id="connect">
+      <h2>Connect</h2>
+      <p><b>Email:</b> pradhanppp64@gmail.com</p><br>
+      <p><b>Phone:</b> +91 6366322677</p><br>
+      <p><b>LinkedIn:</b> Add Profile Link</p>
+    </div>
+
+    <!-- RESUME -->
+    <div class="card" id="resume">
+      <h2>Resume</h2>
+      <p>Download my resume: <a href="#" style="color:#2563eb;">Click here</a></p>
+    </div>
+
+    <footer>
+      © 2026 Pradhan P | Portfolio Website
+    </footer>
+
+  </div>
+
+  <!-- Scroll Animation -->
+  <script>
+    const cards = document.querySelectorAll(".card");
+
+    window.addEventListener("scroll", () => {
+      cards.forEach(card => {
+        const position = card.getBoundingClientRect().top;
+        if (position < window.innerHeight - 100) {
+          card.classList.add("show");
+        }
+      });
+    });
+
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+
+</body>
+</html>
